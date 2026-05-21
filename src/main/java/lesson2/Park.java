@@ -32,11 +32,4 @@ public class Park {
             );
         }
     }
-    public static void main(String[] args) {
-        Park park = new Park();
-
-        for (Attraction a : park.getAttractions()) {
-            a.printInfo();
-        }
-    }
 }
