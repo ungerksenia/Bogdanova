@@ -1,19 +1,16 @@
 package lesson3.task2;
 
-public class Triangle implements Figure {
+public class Triangle extends AbstractFigure {
     private final double a;
     private final double b;
     private final double c;
-    private final String fillColor;
-    private final String borderColor;
 
     public Triangle(double a, double b, double c, String fillColor, String borderColor) {
+        super(fillColor, borderColor);
 
         this.a = a;
         this.b = b;
         this.c = c;
-        this.fillColor = fillColor;
-        this.borderColor = borderColor;
 
     }
 
@@ -22,15 +19,6 @@ public class Triangle implements Figure {
         return "Треугольник";
     }
 
-    @Override
-    public  String getFillColor() {
-        return fillColor;
-    }
-
-    @Override
-    public  String getBorderColor() {
-        return borderColor;
-    }
 
     @Override
     public double calculatePerimeter() {

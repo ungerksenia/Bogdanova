@@ -17,7 +17,8 @@ public class Cat extends Animal {
     }
 
     public void eat(Bowl bowl, int foodAmount) {
-        if (bowl.decreaseFood(foodAmount)) {
+        if (bowl.food >= foodAmount) {
+            bowl.food -= foodAmount;
             satiety = true;
             System.out.println(name + " покушал");
         } else {
@@ -33,6 +34,7 @@ public class Cat extends Animal {
             System.out.println(name + " не пробежал");
         }
     }
+
     @Override
     public void swim(int distance) {
         System.out.println(name + " не умеет плавать.");

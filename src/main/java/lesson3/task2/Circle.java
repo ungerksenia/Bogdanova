@@ -1,30 +1,17 @@
 package lesson3.task2;
 
-public class Circle implements Figure {
+public class Circle extends AbstractFigure {
     private final double radius;
-    private final String fillColor;
-    private final String borderColor;
 
     public Circle(double radius,  String fillColor, String borderColor) {
+        super(fillColor, borderColor);
 
         this.radius = radius;
-        this.fillColor = fillColor;
-        this.borderColor = borderColor;
     }
 
     @Override
     public String getName() {
         return "Круг";
-    }
-
-    @Override
-    public  String getFillColor() {
-        return fillColor;
-    }
-
-    @Override
-    public  String getBorderColor() {
-        return borderColor;
     }
 
     @Override
