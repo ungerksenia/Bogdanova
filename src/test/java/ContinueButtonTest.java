@@ -1,8 +1,10 @@
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
+import java.time.Duration;
 
 public class ContinueButtonTest extends BaseTest {
     @Test
@@ -11,6 +13,8 @@ public class ContinueButtonTest extends BaseTest {
         driver.findElement(By.xpath("//section[@class='pay']//input[@id='connection-phone']")).sendKeys("297777777");
         driver.findElement(By.xpath("//section[@class='pay']//input[@id='connection-sum']")).sendKeys("78");
         driver.findElement(By.xpath("//section[@class='pay']//button[@type='submit']")).click();
-        assertFalse(driver.getCurrentUrl().equals("https://www.mts.by"));
+        new WebDriverWait(driver, Duration.ofSeconds(10))
+                .until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath("//iframe[@class='payment-widget-iframe']")));
+
     }
 }
