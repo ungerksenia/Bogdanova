@@ -29,6 +29,18 @@ public class ApiTest {
     }
 
     @Test
+    public void postRowTextTest() {
+        given()
+                .contentType("text/plain")
+                .body("{\n    \"test\": \"value\"\n}")
+                .when()
+                .post("/post")
+                .then()
+                .statusCode(200)
+                .body("data", equalTo("{\n    \"test\": \"value\"\n}"));
+    }
+
+    @Test
     public void postFormDataTest() {
         given()
                 .contentType("application/x-www-form-urlencoded; charset=UTF-8")
