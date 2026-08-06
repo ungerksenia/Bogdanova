@@ -82,6 +82,24 @@ public class PaymentWindowSteps {
         return paymentWindowPage.getPayCardCVCText().getText();
     }
     @Step("Получаем плейсхолдер поля персональных данных")
+    public String getSubmitButtonSumText() {
+        return paymentWindowPage.getSubmitButtonSum().getText();
+    }
+    public String getAgreementSumText() {
+        return paymentWindowPage.getAgreementSum().getText();
+    }
+    public String getPayDescriptionText() {
+        return paymentWindowPage.getPayDescriptionText().getText();
+    }
+    public String getPayCardNumberText() {
+        return paymentWindowPage.getPayCardNumberText().getText();
+    }
+    public String getPayCardExpiryText() {
+        return paymentWindowPage.getPayCardExpiryText().getText();
+    }
+    public String getPayCardCVCText() {
+        return paymentWindowPage.getPayCardCVCText().getText();
+    }
     public String getPayCardPersonalDataText() {
         return paymentWindowPage.getPayCardPersonalDataText().getText();
     }
